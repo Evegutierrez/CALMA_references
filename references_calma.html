@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>References — p-tau217 & Agitation in Alzheimer's Disease</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--teal:#0F6E56;--teal-light:#E1F5EE;--teal-dark:#04342C;--blue:#185FA5;--blue-light:#E6F1FB;--purple:#534AB7;--coral:#993C1D;--amber:#854F0B;--gray:#5F5E5A;--text:#1a1a18;--muted:#5F5E5A;--border:#D3D1C7;--bg:#FAFAF8;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:var(--bg);color:var(--text);line-height:1.6}
+.hero{background:var(--teal-dark);color:#fff;padding:3rem 2rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hero-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.hero-text{flex:1;min-width:280px}
+.hero-label{font-family:Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9FE1CB;margin-bottom:10px}
+.hero h1{font-size:1.5rem;font-weight:normal;line-height:1.35;margin-bottom:12px}
+.hero-meta{font-family:Arial,sans-serif;font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:Arial,sans-serif;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+.t1{background:rgba(159,225,203,.2);color:#9FE1CB;border:1px solid rgba(159,225,203,.3)}
+.t2{background:rgba(175,169,236,.2);color:#AFA9EC;border:1px solid rgba(175,169,236,.3)}
+.t3{background:rgba(240,153,123,.2);color:#F0997B;border:1px solid rgba(240,153,123,.3)}
+.t4{background:rgba(250,199,117,.2);color:#FAC775;border:1px solid rgba(250,199,117,.3)}
+.t5{background:rgba(133,183,235,.2);color:#85B7EB;border:1px solid rgba(133,183,235,.3)}
+.qr-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:165px}
+#qr-container{background:#fff;padding:8px;border-radius:6px}
+.qr-label{font-family:Arial,sans-serif;font-size:11px;color:rgba(255,255,255,.55);text-align:center;line-height:1.5}
+.stats-bar{background:var(--white);border-bottom:1px solid var(--border);padding:1.2rem 2rem}
+.stats-inner{max-width:900px;margin:0 auto;display:flex;gap:2rem;flex-wrap:wrap;align-items:center}
+.stat{display:flex;align-items:baseline;gap:8px}
+.stat-n{font-size:1.4rem;font-weight:bold;color:var(--teal);font-family:Arial,sans-serif}
+.stat-l{font-family:Arial,sans-serif;font-size:13px;color:var(--muted)}
+.sep{color:var(--border);font-size:1.2rem}
+.main{max-width:900px;margin:0 auto;padding:2rem}
+.copy-row{margin-bottom:1.5rem;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{font-family:Arial,sans-serif;font-size:13px;padding:8px 18px;border-radius:6px;border:1px solid var(--border);background:var(--white);color:var(--text);cursor:pointer;font-weight:500}
+.btn:hover{background:var(--teal-light);border-color:var(--teal);color:var(--teal)}
+.btn-p{background:var(--teal);color:#fff;border-color:var(--teal)}
+.btn-p:hover{background:var(--teal-dark);border-color:var(--teal-dark);color:#fff}
+#copy-msg{font-family:Arial,sans-serif;font-size:12px;color:var(--teal);display:none}
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;align-items:center}
+.fl{font-family:Arial,sans-serif;font-size:12px;color:var(--muted);margin-right:4px}
+.fb{font-family:Arial,sans-serif;font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;font-weight:500}
+.fb:hover{border-color:var(--teal);color:var(--teal)}
+.fb.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.section{margin-bottom:2.5rem}
+.sec-title{font-family:Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:8px 0;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.d-ad{background:var(--blue)}.d-tau{background:var(--purple)}.d-bio{background:var(--teal)}.d-nps{background:var(--coral)}.d-stat{background:var(--amber)}.d-oth{background:var(--gray)}
+.ref{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #EEEDE8}
+.ref:last-child{border-bottom:none}
+.ref:hover{background:#F7F6F2;margin:0 -12px;padding:14px 12px;border-radius:6px}
+.ref-n{font-family:Arial,sans-serif;font-size:12px;font-weight:600;color:var(--muted);min-width:28px;text-align:right;padding-top:2px;flex-shrink:0}
+.ref-b{font-family:Arial,sans-serif;font-size:13.5px;line-height:1.65}
+.au{color:var(--muted)}.ti{font-style:italic}.jo{font-weight:600}
+.doi{font-size:11.5px;color:var(--teal);word-break:break-all;margin-top:2px}
+.doi a{color:var(--teal);text-decoration:none}
+.doi a:hover{text-decoration:underline}
+.pmid{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:10px;font-weight:600;padding:1px 7px;border-radius:4px;margin-left:5px;vertical-align:middle}
+footer{text-align:center;padding:2rem;font-family:Arial,sans-serif;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:2rem}
+@media(max-width:600px){.hero{padding:2rem 1rem 1.5rem}.main{padding:1.5rem 1rem}.hero h1{font-size:1.2rem}.qr-panel{display:none}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-label">Master's Thesis · Universidad de los Andes · 2026</div>
+      <h1>Association between Plasma p-tau217 and Agitation Severity in Patients with Alzheimer's Disease</h1>
+      <div class="hero-meta">Gutiérrez E, Moreno S, Orjuela JM, Tangarife MA, Venegas M, Arbelaez MJ, Rao J, Grimaldi C, Mukunda R<br>CALMA Clinical Trial · NCT05543681 · Cross-sectional study · n = 47</div>
+      <div class="tags">
+        <span class="tag t1">Alzheimer's disease</span>
+        <span class="tag t2">Tau pathology</span>
+        <span class="tag t5">Plasma biomarkers</span>
+        <span class="tag t3">Agitation / NPS</span>
+        <span class="tag t4">Epidemiology</span>
+      </div>
+    </div>
+    <div class="qr-panel">
+      <div id="qr-container"></div>
+      <div class="qr-label">Escanea para ver<br>esta página de referencias</div>
+    </div>
+  </div>
+</div>
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-n">60</span><span class="stat-l">referencias totales</span></div>
+    <span class="sep">·</span>
+    <div class="stat"><span class="stat-n">6</span><span class="stat-l">categorías temáticas</span></div>
+    <span class="sep">·</span>
+    <div class="stat"><span class="stat-n">2020–26</span><span class="stat-l">mayoría recientes</span></div>
+    <span class="sep">·</span>
+    <div class="stat"><span class="stat-n">NULISASeq™</span><span class="stat-l">plataforma</span></div>
+  </div>
+</div>
+<div class="main">
+  <div class="copy-row">
+    <button class="btn btn-p" onclick="copyAll()">Copiar todas las referencias</button>
+    <button class="btn" onclick="copyFiltered()">Copiar selección actual</button>
+    <span id="copy-msg">¡Copiado!</span>
+  </div>
+  <div class="filter-bar">
+    <span class="fl">Filtrar:</span>
+    <button class="fb active" onclick="filter('all',this)">Todas (60)</button>
+    <button class="fb" onclick="filter('ad',this)">Alzheimer's disease</button>
+    <button class="fb" onclick="filter('tau',this)">Tau pathology</button>
+    <button class="fb" onclick="filter('bio',this)">Biomarkers</button>
+    <button class="fb" onclick="filter('nps',this)">Agitation / NPS</button>
+    <button class="fb" onclick="filter('stat',this)">Statistics / Methods</button>
+    <button class="fb" onclick="filter('other',this)">Clinical scales</button>
+  </div>
+  <div id="rc"></div>
+</div>
+<footer>Generado para uso académico · Tesis de Maestría en Epidemiología · Universidad de los Andes · Bogotá, Colombia · 2026<br>CALMA Clinical Trial · IGC Pharma LLC · Potomac, MD, USA</footer>
+<script>
+const refs=[
+{n:1,a:"2024 Alzheimer's disease facts and figures.",t:"Alzheimer's & Dementia.",d:"2024;20(5):3708.",doi:"10.1002/ALZ.13809",p:"38689398",c:"ad"},
+{n:2,a:"Lyketsos CG, Lopez O, Jones B, et al.",t:"Prevalence of neuropsychiatric symptoms in dementia and mild cognitive impairment.",d:"JAMA. 2002.",doi:"",p:"",c:"nps"},
+{n:3,a:"Hardy JA, Higgins GA.",t:"Alzheimer's disease: the amyloid cascade hypothesis.",d:"Science. 1992;256(5054):184–5.",doi:"10.1126/science.1566067",p:"1566067",c:"ad"},
+{n:4,a:"Selkoe DJ.",t:"The molecular pathology of Alzheimer's disease.",d:"Neuron. 1991.",doi:"",p:"",c:"ad"},
+{n:5,a:"Weingarten MD, Lockwood AH, Hwo SY, Kirschner MW.",t:"A protein factor essential for microtubule assembly.",d:"Proc Natl Acad Sci. 1975;72.",doi:"",p:"",c:"tau"},
+{n:6,a:"Grundke-Iqbal I, Iqbal K, Tung YC, et al.",t:"Abnormal phosphorylation of microtubule-associated protein tau in Alzheimer cytoskeletal pathology.",d:"Medical Sciences. 1986.",doi:"",p:"",c:"tau"},
+{n:7,a:"Hollister R, West H, Mui S, et al.",t:"Neuronal loss correlates with but exceeds neurofibrillary tangles in Alzheimer's disease.",d:"1997.",doi:"",p:"",c:"ad"},
+{n:8,a:"Jones DT, Graff-Radford J, Lowe VJ, et al.",t:"Tau, amyloid, and cascading network failure across the Alzheimer's disease spectrum.",d:"Cortex. 2017;97:143–59.",doi:"10.1016/j.cortex.2017.09.018",p:"29102243",c:"ad"},
+{n:9,a:"Selkoe DJ, Hardy J.",t:"The amyloid hypothesis of Alzheimer's disease at 25 years.",d:"EMBO Mol Med. 2016;8(6):595–608.",doi:"10.15252/emmm.201606210",p:"27025652",c:"ad"},
+{n:10,a:"Lu S, Qiu S, Guan Y, et al.",t:"Tau phosphorylation homeostasis: mechanisms, targets, and therapeutic implications in Alzheimer's disease.",d:"Ageing Res Rev. 2026.",doi:"10.1016/j.arr.2026.103097",p:"",c:"tau"},
+{n:11,a:"Rao JS, Tangarife MA, Rodríguez-Soacha DA, et al.",t:"Dysregulated neurotransmitters and CB1 receptor dysfunction and their roles in agitation associated with Alzheimer's disease.",d:"J Dementia Alzheimers Dis. 2025;2(2):15.",doi:"10.3390/jdad2020015",p:"",c:"nps"},
+{n:12,a:"Mattsson-Carlgren N, Janelidze S, Bateman RJ, et al.",t:"Soluble p-tau217 reflects amyloid and tau pathology and mediates the association of amyloid with tau.",d:"EMBO Mol Med. 2021;13(6).",doi:"10.15252/emmm.202114022",p:"33949133",c:"bio"},
+{n:13,a:"Barthélemy NR, He Y, Salvadó G, et al.",t:"P-tau217 significance as marker of brain Aβ and tau pathologies.",d:"Alzheimers Dement. 2024;20(S1).",doi:"10.1002/alz.089427",p:"",c:"bio"},
+{n:14,a:"Mattsson-Carlgren N.",t:"Longitudinal plasma p-tau217 is increased in early stages of Alzheimer's disease.",d:"Brain. 2020;143:3170–80.",doi:"10.1093/BRAIN/AWAA329",p:"33278818",c:"bio"},
+{n:15,a:"López-Martos D, Suárez-Calvet M, Milà-Alomà M, et al.",t:"Longitudinal associations of multimodal core 1 Alzheimer disease biomarkers with cognition.",d:"Neurology. 2025;105(9):e214308.",doi:"10.1212/WNL.0000000000214308",p:"41105892",c:"bio"},
+{n:16,a:"Leuzy A, Smith R, Cullen NC, et al.",t:"Biomarker-based prediction of longitudinal tau PET in Alzheimer disease.",d:"JAMA Neurol. 2022;79(2):149–58.",doi:"10.1001/jamaneurol.2021.4654",p:"34928318",c:"bio"},
+{n:17,a:"Koss E, Weiner M, Ernesto C, et al.",t:"Assessing patterns of agitation in Alzheimer's disease patients with the Cohen-Mansfield Agitation Inventory.",d:"Alzheimer Dis Assoc Disord. 1997;11(Suppl 2):S45–50.",doi:"",p:"",c:"nps"},
+{n:18,a:"Chen Y, Dang M, Zhang Z.",t:"Brain mechanisms underlying neuropsychiatric symptoms in Alzheimer's disease: a systematic review.",d:"Mol Neurodegener. 2021.",doi:"10.1186/s13024-021-00456-1",p:"34099005",c:"nps"},
+{n:19,a:"Okura T, Plassman BL, Steffens DC, et al.",t:"Neuropsychiatric symptoms and the risk of institutionalization and death.",d:"J Am Geriatr Soc. 2011;59(3):473–81.",doi:"10.1111/j.1532-5415.2011.03314.x",p:"21391937",c:"nps"},
+{n:20,a:"Cummings J, Mintzer J, Brodaty H, et al.",t:"Agitation in cognitive disorders: IPA provisional consensus clinical and research definition.",d:"Int Psychogeriatr. 2015;27(1):7–17.",doi:"10.1017/S1041610214001963",p:"25311499",c:"nps"},
+{n:21,a:"Senanarong V, Cummings JL, Fairbanks L, et al.",t:"Agitation in Alzheimer's disease is a manifestation of frontal lobe dysfunction.",d:"Dement Geriatr Cogn Disord. 2004;17(1–2):14–20.",doi:"10.1159/000074080",p:"14560060",c:"nps"},
+{n:22,a:"Grossberg G, Willey C, Houle C, et al.",t:"Agitation in individuals with Alzheimer's disease: an assessment using the CMAI in community-dwellers.",d:"Dementia. 2026;25(2):421–42.",doi:"10.1177/14713012251340463",p:"",c:"nps"},
+{n:23,a:"De Mauleon A, Ismail Z, Rosenberg P, et al.",t:"Agitation in Alzheimer's disease: novel outcome measures reflecting the IPA agitation criteria.",d:"Alzheimers Dement. 2021;17(10):1687–97.",doi:"10.1002/alz.12335",p:"34132461",c:"nps"},
+{n:24,a:"Mok PLH, Carr MJ, Guthrie B, et al.",t:"Multiple adverse outcomes associated with antipsychotic use in people with dementia.",d:"BMJ. 2024.",doi:"10.1136/bmj-2023-076268",p:"38631737",c:"nps"},
+{n:25,a:"Tran CT, Bøg M, Collings SL, et al.",t:"Antipsychotic treatment patterns in Alzheimer's disease patients with agitation.",d:"Curr Med Res Opin. 2022;38(3):409–16.",doi:"10.1080/03007995.2022.2029381",p:"35068266",c:"nps"},
+{n:26,a:"Hatch S, Seitz DP, Bruneau MA, et al.",t:"Canadian clinical practice guidelines for assessing and managing BPSD.",d:"Can Geriatr J. 2025;28(1):91–102.",doi:"10.5770/cgj.28.820",p:"",c:"nps"},
+{n:27,a:"Krell-Roesch J, Zaniletti I, Syrjanen JA, et al.",t:"Plasma-derived biomarkers of Alzheimer's disease and neuropsychiatric symptoms: a community-based study.",d:"Alzheimers Dement DADM. 2023;15(3).",doi:"10.1002/dad2.12461",p:"",c:"bio"},
+{n:28,a:"Barnwal M, Baksh S, Ismail Z, et al.",t:"Blood biomarkers for Alzheimer's disease are correlated with measures of agitation and cognition in a randomized trial.",d:"Alzheimers Dement TRCI. 2026;12(1).",doi:"10.1002/trc2.70203",p:"",c:"bio"},
+{n:29,a:"Bloniecki V, Aarsland D, Cummings J, et al.",t:"Agitation in dementia: relation to core cerebrospinal fluid biomarker levels.",d:"Dement Geriatr Cogn Dis Extra. 2014;4(2):335–43.",doi:"10.1159/000363500",p:"",c:"bio"},
+{n:30,a:"De Oliveira FF, Miraldo MC, De Castro-Neto EF, et al.",t:"Associations of neuropsychiatric features with CSF biomarkers in dementia with Lewy bodies compared with Alzheimer's disease.",d:"J Alzheimers Dis. 2021;81(3):1295–309.",doi:"10.3233/JAD-210272",p:"33935098",c:"bio"},
+{n:31,a:"Skogseth R, Mulugeta E, Ballard C, et al.",t:"Neuropsychiatric correlates of cerebrospinal fluid biomarkers in Alzheimer's disease.",d:"Dement Geriatr Cogn Disord. 2008;25(6):559–63.",doi:"10.1159/000137671",p:"18536520",c:"bio"},
+{n:32,a:"McKhann GM, Knopman DS, Chertkow H, et al.",t:"The diagnosis of dementia due to Alzheimer's disease: NIA-AA recommendations.",d:"Alzheimers Dement. 2011;7(3):263–9.",doi:"10.1016/j.jalz.2011.03.005",p:"21514250",c:"ad"},
+{n:33,a:"Cummings JL.",t:"The Neuropsychiatric Inventory: assessing psychopathology in dementia patients.",d:"Neurology. 1997.",doi:"",p:"",c:"nps"},
+{n:34,a:"Cohen-Mansfield J.",t:"Agitated behaviors in the elderly: II. Preliminary results in the cognitively deteriorated.",d:"J Am Geriatr Soc. 1986;34(10):722–7.",doi:"10.1111/j.1532-5415.1986.tb04303.x",p:"3760436",c:"nps"},
+{n:35,a:"Cohen-Mansfield J, Marx MS, Rosenthal AS.",t:"A description of agitation in a nursing home.",d:"J Gerontol. 1989.",doi:"",p:"",c:"nps"},
+{n:36,a:"Marston L, Livingston G, Laybourne A, Cooper C.",t:"Becoming or remaining agitated: the course of agitation in people with dementia living in care homes (MARQUE study).",d:"J Alzheimers Dis. 2020;76(2):467–73.",doi:"10.3233/JAD-191195",p:"32538834",c:"nps"},
+{n:37,a:"Whall AL, et al.",t:"Nurse aide identification of onset and level of agitation in late stage dementia patients.",d:"J Alzheimers Dis. 1999;14(4).",doi:"10.1177/153331759901400408",p:"",c:"nps"},
+{n:38,a:"Valletta M, Briel N, Yuksekel I, et al.",t:"Fluid biomarkers for neurodegenerative diseases: a comprehensive update.",d:"Alzheimers Res Ther. 2026.",doi:"10.1186/s13195-025-01919-z",p:"41422050",c:"bio"},
+{n:39,a:"Wang YT, Ashton NJ, Therriault J, et al.",t:"Identify biological Alzheimer's disease using a novel nucleic acid-linked protein immunoassay.",d:"Brain Commun. 2025;7(1).",doi:"10.1093/braincomms/fcaf004",p:"",c:"bio"},
+{n:40,a:"Ashton NJ, Benedet AL, Di Molfetta G, et al.",t:"Biomarker discovery in Alzheimer's and neurodegenerative diseases using nucleic acid-linked immuno-sandwich assay.",d:"medRxiv. 2024.",doi:"10.1101/2024.07.29.24311079",p:"",c:"bio"},
+{n:41,a:"Ibanez L, Liu M, Beric A, et al.",t:"Benchmarking of a multi-biomarker low-volume panel for Alzheimer's disease and related dementia research.",d:"medRxiv. 2024.",doi:"10.1101/2024.06.13.24308895",p:"",c:"bio"},
+{n:42,a:"Ferrari-Souza JP, Bellaver B, Ferreira PCL, et al.",t:"APOEε4 potentiates amyloid β effects on longitudinal tau pathology.",d:"Nat Aging. 2023;3(10):1210–8.",doi:"10.1038/s43587-023-00490-2",p:"",c:"ad"},
+{n:43,a:"Baek MS, Cho H, Lee HS, et al.",t:"Effect of APOE ε4 genotype on amyloid-β and tau accumulation in Alzheimer's disease.",d:"Alzheimers Res Ther. 2020;12(1).",doi:"10.1186/s13195-020-00710-6",p:"33129364",c:"ad"},
+{n:44,a:"Craig D, Hart DJ, McCool K, et al.",t:"Apolipoprotein E ε4 allele influences aggressive behaviour in Alzheimer's disease.",d:"J Neurol Neurosurg Psychiatry. 2004;75(9):1327–30.",doi:"10.1136/jnnp.2003.032276",p:"15314125",c:"nps"},
+{n:45,a:"Goldberg TE, Kim H, Devanand D, et al.",t:"Effects of APOE ε4 and neuropathological diagnoses on neuropsychiatric symptoms: mediation analyses.",d:"Alzheimers Dement. 2024;20(S8).",doi:"10.1002/alz.094887",p:"",c:"nps"},
+{n:46,a:"Burke SL, Maramaldi P, Cadet T, et al.",t:"Neuropsychiatric symptoms and Apolipoprotein E: associations with eventual Alzheimer's disease development.",d:"Arch Gerontol Geriatr. 2016;65:231–8.",doi:"10.1016/j.archger.2016.04.006",p:"27111252",c:"nps"},
+{n:47,a:"Tombaugh TN, McIntyre NJ.",t:"The Mini-Mental State Examination: a comprehensive review.",d:"J Am Geriatr Soc. 1992;40(9):922–35.",doi:"",p:"",c:"other"},
+{n:48,a:"Folstein MF, Folstein SE, McHugh PR.",t:"Mini-mental state: a practical method for grading the cognitive state of patients for the clinician.",d:"J Psychiatr Res. 1975.",doi:"",p:"",c:"other"},
+{n:49,a:"Sclan SG, Reisberg B.",t:"Functional Assessment Staging (FAST) in Alzheimer's disease: reliability, validity, and ordinality.",d:"Int Psychogeriatr. 1992;4(3):55–69.",doi:"10.1017/S1041610292001157",p:"1504288",c:"other"},
+{n:50,a:"Reisberg B, Ferris SH, Anand R, et al.",t:"Functional staging of dementia of the Alzheimer type.",d:"Ann N Y Acad Sci. 1988.",doi:"",p:"",c:"other"},
+{n:51,a:"Steinberg M, Corcoran C, Tschanz JT, et al.",t:"Risk factors for neuropsychiatric symptoms in dementia: the Cache County Study.",d:"Int J Geriatr Psychiatry. 2006;21(9):824–30.",doi:"10.1002/gps.1567",p:"16955439",c:"nps"},
+{n:52,a:"Saloner R, VandeVrede L, Asken BM, et al.",t:"Plasma phosphorylated tau-217 exhibits sex-specific prognostication of cognitive decline and brain atrophy.",d:"Alzheimers Dement. 2024;20(1):376–87.",doi:"10.1002/alz.13454",p:"37639492",c:"bio"},
+{n:53,a:"Xing Y, Qin W, Li F, et al.",t:"Apolipoprotein E ε4 status modifies the effects of sex hormones on neuropsychiatric symptoms of Alzheimer's disease.",d:"Dement Geriatr Cogn Disord. 2012;33(1):35–42.",doi:"10.1159/000336600",p:"22398564",c:"nps"},
+{n:54,a:"Cohen J.",t:"Statistical Power Analysis for the Behavioral Sciences.",d:"2nd ed. Psychology Press; 1988.",doi:"",p:"",c:"stat"},
+{n:55,a:"Bulus M, Polat C.",t:"pwrss R paketi ile istatistiksel güç analizi.",d:"Ahi Evran Üniversitesi Kırşehir Eğitim Fak Dergisi. 2023;24(3).",doi:"10.29299/kefad.1209913",p:"",c:"stat"},
+{n:56,a:"Raket LL, Binette AP, Mattsson-Carlgren N, et al.",t:"Estimating the time course of biomarker changes in Alzheimer's disease.",d:"Brain. 2025.",doi:"10.1093/brain/awaf413",p:"",c:"bio"},
+{n:57,a:"Pichet Binette A, Franzmeier N, Spotorno N, et al.",t:"Amyloid-associated increases in soluble tau relate to tau aggregation rates and cognitive decline in early Alzheimer's disease.",d:"Nat Commun. 2022;13(1):6635.",doi:"10.1038/s41467-022-34129-4",p:"36333294",c:"tau"},
+{n:58,a:"Smith R, Strandberg O, Mattsson-Carlgren N, et al.",t:"The accumulation rate of tau aggregates is higher in females and younger amyloid-positive subjects.",d:"Brain. 2020;143(12):3805–15.",doi:"10.1093/brain/awaa327",p:"33439987",c:"tau"},
+{n:59,a:"Archer N, Brown RG, Reeves SJ, et al.",t:"Premorbid personality and behavioral and psychological symptoms in probable Alzheimer disease.",d:"Am J Geriatr Psychiatry. 2007;15(3):202–13.",doi:"10.1097/01.JGP.0000232510.77213.10",p:"17322133",c:"nps"},
+{n:60,a:"Lin Z, Sun R, Ross JS, et al.",t:"Racial and ethnic reporting and representation in US Alzheimer clinical trials.",d:"JAMA Netw Open. 2026;9(3):e262427.",doi:"10.1001/jamanetworkopen.2026.2427",p:"",c:"stat"}
+];
+const cats={ad:{l:"Alzheimer's disease",d:"d-ad"},tau:{l:"Tau pathology",d:"d-tau"},bio:{l:"Biomarkers",d:"d-bio"},nps:{l:"Agitation / NPS",d:"d-nps"},stat:{l:"Statistics / Methods",d:"d-stat"},other:{l:"Clinical scales",d:"d-oth"}};
+const order=["ad","tau","bio","nps","stat","other"];
+let cur="all";
+function render(f){
+  const rc=document.getElementById('rc');rc.innerHTML='';
+  order.forEach(cat=>{
+    const g=refs.filter(r=>r.c===cat&&(f==='all'||f===cat));
+    if(!g.length)return;
+    const s=document.createElement('div');s.className='section';
+    s.innerHTML=`<div class="sec-title"><span class="dot ${cats[cat].d}"></span>${cats[cat].l} (${g.length})</div>`;
+    g.forEach(r=>{
+      const dv=document.createElement('div');dv.className='ref';
+      const dh=r.doi?`<div class="doi">DOI: <a href="https://doi.org/${r.doi}" target="_blank">https://doi.org/${r.doi}</a></div>`:'';
+      const ph=r.p?`<span class="pmid">PMID ${r.p}</span>`:'';
+      dv.innerHTML=`<div class="ref-n">${r.n}.</div><div class="ref-b"><span class="au">${r.a}</span> <span class="ti">${r.t}</span> <span class="jo">${r.d}</span>${ph}${dh}</div>`;
+      s.appendChild(dv);
+    });
+    rc.appendChild(s);
+  });
+}
+function filter(cat,btn){
+  cur=cat;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render(cat);
+}
+function copyAll(){
+  const t=refs.map(r=>`${r.n}. ${r.a} ${r.t} ${r.d}${r.doi?' DOI:'+r.doi:''}${r.p?' PMID:'+r.p:''}`).join('\n\n');
+  doCopy(t);
+}
+function copyFiltered(){
+  const f=cur==='all'?refs:refs.filter(r=>r.c===cur);
+  const t=f.map(r=>`${r.n}. ${r.a} ${r.t} ${r.d}${r.doi?' DOI:'+r.doi:''}${r.p?' PMID:'+r.p:''}`).join('\n\n');
+  doCopy(t);
+}
+function doCopy(t){
+  navigator.clipboard.writeText(t).then(()=>{
+    const m=document.getElementById('copy-msg');m.style.display='inline';
+    setTimeout(()=>m.style.display='none',2500);
+  });
+}
+function genQR(){
+  try{
+    new QRCode(document.getElementById('qr-container'),{
+      text:window.location.href,width:130,height:130,
+      colorDark:"#04342C",colorLight:"#ffffff",
+      correctLevel:QRCode.CorrectLevel.M
+    });
+  }catch(e){}
+}
+render('all');
+window.addEventListener('load',genQR);
+</script>
+</body>
+</html>
